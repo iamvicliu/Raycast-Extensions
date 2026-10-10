@@ -1,0 +1,54 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "agent-history",
+  "title": "AgentHub会话搜索",
+  "description": "在本地 AgentHub 索引中搜索 Agent 对话和消息",
+  "icon": "agenthub.png",
+  "author": "iamvicliu",
+  "license": "MIT",
+  "categories": [
+    "Developer Tools",
+    "Productivity"
+  ],
+  "commands": [
+    {
+      "name": "search",
+      "title": "AgentHub会话搜索",
+      "description": "搜索本地会话，预览消息及上下文",
+      "mode": "view",
+      "keywords": [
+        "cursor",
+        "claude",
+        "codex",
+        "history",
+        "记录",
+        "agenthub"
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "database",
+      "type": "textfield",
+      "required": false,
+      "title": "AgentHub 数据库路径",
+      "description": "默认 ~/.agenthub/agenthub.db，只读访问",
+      "default": "~/.agenthub/agenthub.db"
+    }
+  ],
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/database.test.ts"
+  },
+  "dependencies": {
+    "@raycast/api": "^2.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
