@@ -32,31 +32,40 @@
 
 ## 安装
 
-目前没有上架 Raycast Store，需要自己构建安装，大约 2 分钟。
+目前没有上架 Raycast Store。用下面这一行命令安装，不需要懂开发，也不用事先装 Node.js 或 Git，大约 1 分钟。
 
 **准备工作**
 
 - macOS，已安装 [Raycast](https://www.raycast.com/)（在 2.7.3 上测试过）。
 - 已安装 [AgentHub](https://github.com/iamvicliu/AgentHub/releases) 1.0.0 或更高版本，并且至少打开同步过一次。
-- 已安装 [Node.js](https://nodejs.org/) 22.22.2 或更高版本。
 
 **安装步骤**
 
-1. 下载本仓库并进入扩展目录：
+1. 打开「终端」（在启动台或聚焦搜索里搜「终端」），粘贴下面这行，按回车：
 
    ```bash
-   git clone https://github.com/iamvicliu/Raycast-Extensions.git
-   cd Raycast-Extensions/AgentHub-Search
+   curl -fsSL https://raw.githubusercontent.com/iamvicliu/Raycast-Extensions/main/install.sh | bash
    ```
 
-2. 安装依赖并构建，构建完成后扩展会自动装进 Raycast：
+2. 看到「安装完成」后，打开 Raycast，输入「AgentHub会话搜索」就能用。建议在 Raycast 设置里给它绑一个快捷键或别名。
 
-   ```bash
-   npm install
-   npm run build
-   ```
+**更新**：再运行一次同样的命令。Raycast 里的快捷键、别名和扩展设置都会保留。
 
-3. 打开 Raycast，输入「AgentHub会话搜索」就能用。建议在 Raycast 设置里给它绑一个快捷键或别名。
+这行命令做的事：临时下载 Node.js 官方版本（校验 SHA-256，装完即删，不装进系统）、下载本仓库源码、构建并装进 Raycast。脚本内容见 [install.sh](../install.sh)。
+
+<details>
+<summary>手动构建（开发者）</summary>
+
+需要 [Node.js](https://nodejs.org/) 22.22.2 或更高版本：
+
+```bash
+git clone https://github.com/iamvicliu/Raycast-Extensions.git
+cd Raycast-Extensions/AgentHub-Search
+npm install
+npm run build
+```
+
+</details>
 
 ## 使用方法
 
